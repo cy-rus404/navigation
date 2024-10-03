@@ -5,31 +5,31 @@ import { Button, Text, View } from 'react-native';
 
 function HomeScreen({navigation}){
   return(
-    <View style={{flex:1, alignItems:'center'}}>
+    <View>
       <Text>Home Screen</Text>
-      <Button title='Click Me' onPress={()=> navigation.navigate('Home')}/>
+      <Button title='Click Me' onPress={()=> navigation.navigate('Detail')}/>
     </View>
   )
 }
 
 function DetailsScreen({navigation}){
   return(
-    <View style={{flex:1, alignItems:'center'}}>
+    <View>
       <Text>Details Screen</Text>
-      <Button title='Click Me' onPress={()=> navigation.navigate('Detail')}/>
+      <Button title='Click Me' onPress={()=> navigation.navigate('Home')}/>
 
     </View>
   )
 }
 
-
 const Stack = createNativeStackNavigator();
+
 function App(){
   return(
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name='Home' component={HomeScreen} />
-        <Stack.Screen name='Detail' component={DetailsScreen} />
+        <Stack.Screen name='Home' component={HomeScreen}/>
+        <Stack.Screen name='Detail' component={DetailsScreen}/>
 
       </Stack.Navigator>
     </NavigationContainer>
